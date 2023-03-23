@@ -41,10 +41,12 @@ export class EdgeRenderingWithLambdaStack extends Stack {
 		const cfDistro = new Distribution(this, 'cfDist', {
 			defaultBehavior: {
 				origin: new S3Origin(sourceBucket),
+				allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
 				edgeLambdas: [
 					{
 						functionVersion: QwikFunc.currentVersion,
 						eventType: LambdaEdgeEventType.VIEWER_REQUEST,
+						includeBody: true,
 					},
 				],
 			},

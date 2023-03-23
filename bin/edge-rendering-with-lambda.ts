@@ -4,9 +4,8 @@ import * as cdk from 'aws-cdk-lib';
 import { EdgeRenderingWithLambdaStack } from '../lib/edge-rendering-with-lambda-stack';
 
 const app = new cdk.App();
-new EdgeRenderingWithLambdaStack(app, 'EdgeRenderingWithLambdaStack',
-{
-    env:{
-        region: "us-east-1"
-    }
+new EdgeRenderingWithLambdaStack(app, 'EdgeRenderingWithLambdaStack', {
+	env: {
+		region: 'us-east-1',
+	},
 });
